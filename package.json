@@ -29,5 +29,8 @@
     "mocha": "2.2.5",
     "sinon": "1.15.4",
     "underscore": "1.8.3"
+  },
+  "peerDependencies": {
+    "nci": "0.9.x"
   }
 }
