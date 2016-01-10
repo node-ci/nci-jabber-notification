@@ -1,6 +1,6 @@
 {
   "name": "nci-jabber-notification",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Jabber notification plugin for nci",
   "main": "lib/index.js",
   "scripts": {
