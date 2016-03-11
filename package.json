@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/node-ci/nci-jabber-notification",
   "dependencies": {
-    "node-xmpp-client": "1.0.0-alpha23"
+    "node-xmpp-client": "3.0.0"
   },
   "devDependencies": {
     "expect.js": "0.3.1",
