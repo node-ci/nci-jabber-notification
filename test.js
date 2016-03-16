@@ -59,16 +59,16 @@ describe('Jabber notifier', function() {
 				logger: function() {
 					return {log: noop, error: noop};
 				},
-				BaseNotifierTransport: function() {
-				}
-			},
-			notifier: {
-				register: function(type, constructor) {
-					notifier = new constructor();
-					notifier.client = {};
-					notifier.client.send = sinon.spy();
-					sendSpy = notifier.client.send;
-					sendMessageSpy = sinon.spy(notifier, '_sendMessage');
+				notifier: {
+					register: function(type, constructor) {
+						notifier = new constructor();
+						notifier.client = {};
+						notifier.client.send = sinon.spy();
+						sendSpy = notifier.client.send;
+						sendMessageSpy = sinon.spy(notifier, '_sendMessage');
+					},
+					BaseNotifierTransport: function() {
+					}
 				}
 			},
 			config: {http: {url: url}}
