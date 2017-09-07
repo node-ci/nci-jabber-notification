@@ -17,6 +17,7 @@ describe('Jabber notifier', function() {
 			'<%= build.project.name %> build ' +
 			'<a href="<%= url %>/builds/<%= build.id %>">#<%= build.number %></a> ' +
 			'status is <%= build.status %>' +
+			', scm target is <%= build.project.scm.rev %>' +
 			'<% if (build.scm.changes.length) { %>' +
 				', scm changes:<br/>' +
 				'<% _(build.scm.changes).map(function(change, index) { %>' +
@@ -44,7 +45,10 @@ describe('Jabber notifier', function() {
 				scm: {changes: []},
 				project: {
 					name: 'nci',
-					notify: {to: {jabber: ['oleg.korobenko@gmail.com']}}
+					notify: {to: {jabber: ['oleg.korobenko@gmail.com']}},
+					scm: {
+						rev: 'default'
+					}
 				}
 			}).extend(params.build)
 		};
@@ -143,7 +147,24 @@ describe('Jabber notifier', function() {
 				name: 'nci',
 				notify: {to: {jabber: [
 					'oleg.korobenko@gmail.com', 'oleg.poligon@gmail.com'
-				]}}
+				]}},
+				scm: {
+					rev: 'default'
+				}
+			}
+		}
+	});
+
+	describeMessageCreation('when custom no scm changes, 1 recipient and revision ', {
+		build: {
+			project: {
+				name: 'nci',
+				notify: {to: {jabber: [
+					'oleg.korobenko@gmail.com'
+				]}},
+				scm: {
+					rev: 'release'
+				}
 			}
 		}
 	});
