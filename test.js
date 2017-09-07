@@ -155,7 +155,7 @@ describe('Jabber notifier', function() {
 		}
 	});
 
-	describeMessageCreation('when custom no scm changes, 1 recipient and revision ', {
+	describeMessageCreation('when custom rev, no scm changes, 1 recipient and revision ', {
 		build: {
 			project: {
 				name: 'nci',
